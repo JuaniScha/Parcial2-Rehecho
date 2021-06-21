@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{4FE1AE6F-B873-4ED9-B8EE-D5FE63095594}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicio", "Servicio\Servicio.csproj", "{7D7973F0-8DC3-4114-8D2C-4703A28E6E50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicio.Tests", "Servicio.Tests\Servicio.Tests.csproj", "{64CE78C1-F31E-4E56-B1FB-C505974B92C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FE1AE6F-B873-4ED9-B8EE-D5FE63095594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE1AE6F-B873-4ED9-B8EE-D5FE63095594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE1AE6F-B873-4ED9-B8EE-D5FE63095594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE1AE6F-B873-4ED9-B8EE-D5FE63095594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7973F0-8DC3-4114-8D2C-4703A28E6E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7973F0-8DC3-4114-8D2C-4703A28E6E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7973F0-8DC3-4114-8D2C-4703A28E6E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7973F0-8DC3-4114-8D2C-4703A28E6E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64CE78C1-F31E-4E56-B1FB-C505974B92C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CE78C1-F31E-4E56-B1FB-C505974B92C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CE78C1-F31E-4E56-B1FB-C505974B92C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CE78C1-F31E-4E56-B1FB-C505974B92C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D7A6420-AC6D-4520-BF39-07B686DE2F75}
+	EndGlobalSection
+EndGlobal
