@@ -15,6 +15,7 @@ namespace Logica
         public DateTime FechaEstimada { get; set; }
         public DateTime FechaEntrega { get; set; }
         public string Descripcion { get; set; }
+        public double Costo { get; set; }
 
         public Envio(int dni, string descrip, DateTime fechaEstimada)
         {
@@ -33,6 +34,11 @@ namespace Logica
             if (this.Estado == (Estados)estado - 1)
             {
                 this.Estado = (Estados)estado;
+                if (estado == (int)Estados.Entregado)
+                {
+                    this.FechaEntrega = DateTime.Now;
+                    this.Repartidor.ComisionGanada = this.Costo * this.Repartidor.PorcentajeComision;
+                }
                 return true;
             }
 

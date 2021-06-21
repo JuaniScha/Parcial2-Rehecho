@@ -116,11 +116,11 @@ namespace Logica
                         if (repartidorLista != null)
                         {
                             repartidorLista.EnviosRealizados++;
-                            repartidorLista.TotalGanadoComisiones += repartidor.PorcentajeComision;
+                            repartidorLista.TotalGanadoComisiones += repartidor.ComisionGanada;
                         }
                         else
                         {
-                            RepartidorLista nuevo = new RepartidorLista() { NombreApellido = repartidor.NombreApellido, EnviosRealizados = 1, TotalGanadoComisiones = repartidor.PorcentajeComision };
+                            RepartidorLista nuevo = new RepartidorLista() { NombreApellido = repartidor.NombreApellido, EnviosRealizados = 1, TotalGanadoComisiones = repartidor.ComisionGanada };
                             lista.Add(nuevo);
                         }
                     }
