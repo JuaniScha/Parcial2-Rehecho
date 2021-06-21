@@ -5,8 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Logica
-{    
-    public sealed class Principal
+{
+    public interface IPrincipal
+    {
+        Persona ObtenerClientePorDNI(int dni);        
+        Envio ObtenerEnvioPorID(string id);
+        Resultado CargarNuevoEnvio(Envio envio);
+        Resultado ActualizarEnvio(string nroEnvio, int estadoNuevo);
+        Resultado AsignarRepartidorEnvio(string nroEnvio);
+        List<RepartidorLista> ObtenerListaEntreFechas(DateTime desde, DateTime hasta);
+    }
+
+    public class Principal : IPrincipal
     {
         public List<Envio> Envios { get; set; }
         public List<Persona> Clientes { get; set; }
@@ -41,6 +51,7 @@ namespace Logica
             get { return _instance; }
         }
 
+        //Faltan las validaciones
         public Resultado CargarNuevoEnvio(Envio envio)
         {
             Persona destinatario = envio.Destinatario;
@@ -53,6 +64,7 @@ namespace Logica
             return new Resultado(envio.NroEnvio, true);
         }
 
+        //Usar enum si esta creado
         public Resultado ActualizarEnvio(string nroEnvio, int estadoNuevo)
         {
             Envio envio = ObtenerEnvioPorID(nroEnvio);
@@ -108,7 +120,7 @@ namespace Logica
             foreach (Envio item in Envios)
             {
                 Repartidor repartidor = item.Repartidor;
-                if(item.Estado == Envio.Estados.Entregado)
+                if (item.Estado == Envio.Estados.Entregado)
                 {
                     if (item.FechaEstimada >= desde || item.FechaEstimada <= hasta)
                     {
@@ -120,6 +132,7 @@ namespace Logica
                         }
                         else
                         {
+                            //Podria usar constructor
                             RepartidorLista nuevo = new RepartidorLista() { NombreApellido = repartidor.NombreApellido, EnviosRealizados = 1, TotalGanadoComisiones = repartidor.ComisionGanada };
                             lista.Add(nuevo);
                         }

@@ -11,11 +11,17 @@ namespace Servicio.Controllers
 {
     public class EnviosController : ApiController
     {
-        Principal principal = Principal.Instancia;
+        public IPrincipal principal { get; set; }
+
+        public EnviosController(IPrincipal principal)
+        {
+            this.principal = principal ?? Principal.Instancia;
+        }       
 
         // GET: api/Envios/5
         public IHttpActionResult Get(string idEnvio)
         {
+            //Esto es un PUT no un Get, no deberia estar esta logica aca, sino en la actualizacion de envío
             Resultado resultado = principal.AsignarRepartidorEnvio(idEnvio);
 
             if (resultado.Ok)
